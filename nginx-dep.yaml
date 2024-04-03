@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-dep
+spec:
+  selector:
+    matchLabels:
+      # Fill these
+  replicas: 5
+  template:
+    metadata:
+      labels:
+        # Fill these
+    spec:
+      containers:
+        name: nginx
+        image: nginx:1.14.2
+        ports:
+          - containerPort: 80
+        volumeMounts:
+          - name: nginx-config
+          mountPath: /etc/nginx/conf.d
+      volumes:
+      - name: nginx-config
+        configMap:
+          name: nginx-configmap
+          items:
+          - key: default.conf
+            path: default.conf
+        
