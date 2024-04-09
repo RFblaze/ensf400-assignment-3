@@ -2,6 +2,10 @@ Firstly, start minikube:
 ```
 minikube start
 ```
+Secondly, enable ingress add-on
+```
+minikube addons enable ingress
+```
 
 Then start the nginx
 

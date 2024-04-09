@@ -9,7 +9,7 @@ spec:
   - http:
       paths:
       - pathType: Prefix
-        path: "/app"
+        path: "/app-2"
         backend:
           service:
             name: app-2-svc
